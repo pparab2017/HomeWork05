@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <group
+        android:id="@+id/menu_top"
+        android:checkableBehavior="single">
+<item android:id="@+id/account" android:title="Account" android:icon="@mipmap/ic_account_circle_black_24dp"></item>
+    <item android:id="@+id/settings" android:title="The coach" android:icon="@mipmap/ic_message_black_24dp"></item>
+    </group>
+    <group
+        android:id="@+id/menu_bottom"
+        android:checkableBehavior="none">
+    <item android:id="@+id/logout" android:title="Log Out" android:icon="@mipmap/ic_power_settings_new_black_24dp"></item>
+    </group>
+</menu>
