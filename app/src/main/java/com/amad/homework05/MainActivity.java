@@ -29,6 +29,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     final static String LOGGEDIN_USER = "LOGGED_IN_USER";
     final static String LOGGEDIN_TOKEN = "LOGGED_IN_USER_TOKEN";
     final static String STORED = "stored";
+    final static String SHARED_TOKEN = "SHARED";
     private TextView txt_userName, txt_password, txt_errorMsg;
     private final OkHttpClient client = new OkHttpClient();
 
@@ -57,6 +58,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             i.putExtra(LOGGEDIN_TOKEN,token);
             startActivity(i);
         }
+    }
+    @Override
+    public void onBackPressed() {
+        moveTaskToBack(true);
     }
 
     @Override
@@ -97,11 +102,15 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                         Log.d("json",mLoginUser.toString() );
                         if(mLoginUser.getToken() != null)
                         {
+                           Log.d("tag","Logged in Success!");
                             txt_errorMsg.setText("Logged in Success!");
                             SharedPreferences mPrefs = getSharedPreferences(MainActivity.STORED,MODE_PRIVATE);
                             SharedPreferences.Editor prefsEditor = mPrefs.edit();
 
                             prefsEditor.putString("MyAppKey", mLoginUser.getToken());
+                            prefsEditor.putString("Name", mLoginUser.getfName());
+                            prefsEditor.putString("usedID", mLoginUser.getEmail());
+                            prefsEditor.putString("gender", mLoginUser.getGender());
                             prefsEditor.commit();
 
 //                                if(mPrefs.contains("MyAppKey"))

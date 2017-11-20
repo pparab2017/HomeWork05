@@ -54,6 +54,10 @@ public class RegistrationService extends IntentService {
             // otherwise your server should have already received the token.
             sharedPreferences.edit().putBoolean(QuickstartPreferences.SENT_TOKEN_TO_SERVER, true).apply();
             // [END register_for_gcm]
+
+            Intent registrationComplete = new Intent(QuickstartPreferences.REGISTRATION_COMPLETE);
+            registrationComplete.putExtra("token", token);
+            LocalBroadcastManager.getInstance(this).sendBroadcast(registrationComplete);
         } catch (Exception e) {
             Log.d(TAG, "Failed to complete token refresh", e);
             // If an exception happens while fetching the new token or updating our registration data
@@ -61,8 +65,7 @@ public class RegistrationService extends IntentService {
             sharedPreferences.edit().putBoolean(QuickstartPreferences.SENT_TOKEN_TO_SERVER, false).apply();
         }
         // Notify UI that registration has completed, so the progress indicator can be hidden.
-        Intent registrationComplete = new Intent(QuickstartPreferences.REGISTRATION_COMPLETE);
-        LocalBroadcastManager.getInstance(this).sendBroadcast(registrationComplete);
+
     }
 
     /**

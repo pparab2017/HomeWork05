@@ -12,8 +12,12 @@ public class Utils {
 
         LOGIN(BASE_URL + "/api/SurveyAppLogin"),
         MY_MESSAGES(BASE_URL + "/api/getMyMessages"),
-        SIGN_UP("http://ec2-13-59-39-123.us-east-2.compute.amazonaws.com/api/signup"),
-        UPDATE_INFO("http://ec2-13-59-39-123.us-east-2.compute.amazonaws.com/api/update/myInfo");
+        SUBMIT_RESPONSE(BASE_URL + "/api/submitResponse"),
+        SUBMIT_TOKEN(BASE_URL + "/api/deviceRegister"),
+        LOG_OUT(BASE_URL + "/api/logout"),
+        GET_SUBSCRIPTION(BASE_URL + "/api/getSubscrition"),
+        SUBSCRIBE(BASE_URL + "/api/subscribe")
+        ;
 
         private final String text;
         private Api_url(final String text) {

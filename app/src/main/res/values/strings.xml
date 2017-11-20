@@ -1,16 +1,19 @@
 <resources>
-    <string name="app_name">Cloud Messaging </string>
+    <string name="app_name">Study Tutor</string>
     <string name="open">Open</string>
     <string name="close">Close</string>
     <string name="userName">User Name</string>
     <string name="password">Password</string>
     <string name="login_btn">Login</string>
     <string name="btn_signUp">Sign Up</string>
-    <string name="app_name_home">Assignment-01</string>
+    <string name="app_name_home">Study Tutor</string>
     <string name="txt_age_holder">Age</string>
     <string name="txt_weight_holder">Weight</string>
     <string name="txt_address_holder">Address</string>
     <string name="title_activity_user">UserActivity</string>
 
     <string name="action_settings">Settings</string>
+    <string name="hint_notify" >Check the above box to subscribe for push notifications.</string>
+    <string name="no_msgs" >There are no messages for you. If you are not assigned to a study
+    coordinator, then drop a mail to pparab1@uncc.edu.</string>
 </resources>

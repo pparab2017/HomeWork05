@@ -31,6 +31,7 @@ public class JsonParser {
                 }
                 toReturn.setId(Integer.parseInt(jsonObject.getString("userId")));
                 toReturn.setEmail(jsonObject.getString("userEmail"));
+                toReturn.setGender(jsonObject.getString("gender"));
 
             }else
             {
